@@ -1,37 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
     <link rel='stylesheet' type='text/css'  href='css/reset.css'>
     <link rel='stylesheet' type='text/css' href='css/styles.css'>
-    <title>ideabox</title>
+    <title>2DoBox</title>
   </head>
-
   <body>
-    <section class="main">
+    <div class="wrapper">
       <section class="main-content">
         <header>
-          <h1><span>idea</span>box</h1>
-        </header>
+          <h1 tabindex="0"><span>2Do</span>Box</h1>
         <form id="form-data">
-          <input class="title-input js-title-input" type="text" placeholder="Title">
-          <input class="body-input js-body-input" type="text" placeholder="Body">
+          <label aria-label="task-title" for="task-title">Task Title</label>
+          <input aria-labelledby="task-title" id="task-title" class="title-input" name="title" type="text" placeholder="Title">
+          <label aria-label="task-body" for="task-body">Task Body</label>
+          <input aria-labelledby="task-body" id="task-body" class="body-input" type="text" placeholder="Task" name="task">
+          <p class="char-count"></p>
+          <button tabindex="0" class="save-btn" type="submit" name="save" disabled>save</button>
         </form>
-        <button class="save-btn js-save-btn" type="submit" disabled>save</button>
-    </section>
-  </section>
-
-  <section class="search-section">
-    <form>
-      <input class="search-input js-search-input" type="text" placeholder="Search">
-    </form>
-  </section>
-
-    <section class="card-section">
-    </section>
+      </header>
+      </section>
+      <section class="search-section">
+        <form>
+          <label aria-label="search" for="search">Search Field</label>
+          <input aria-labelledby="search" id="search" class="search-input" type="text" name="search" placeholder="Search">
+          <button class="show-complete" disabled><img class="checkmark" src="../images/checkmark.png" alt="checkmark icon">Show completed tasks</button>
+          <div class="filter-wrap">
+            <button id="none-btn" class="filter-btn" name="none">None</button>
+            <button id="low-btn" class="filter-btn" name="low">Low</button>
+            <button id="normal-btn" class="filter-btn" name="normal">Normal</button>
+            <button id="high-btn" class="filter-btn" name="high">High</button>
+            <button id="critical-btn" class="filter-btn" name="critical">Critical</button>
+            <button class="clear-filter filter-btn">Clear Filter</button>
+          </div>
+        </form>
+      </section>
+      <section class="card-section">
+        <button class="show-more">Show more tasks</button>
+      </section>
+    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/write.js"></script>
+    <script src="main.bundle.js"></script>
   </body>
 </html>
